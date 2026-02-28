@@ -1,0 +1,530 @@
+{
+  "nightTab": true,
+  "version": "7.7.0",
+  "state": {
+    "language": "system",
+    "layout": {
+      "width": 82,
+      "title": "Welcome to Chrome",
+      "alignment": "center-center",
+      "padding": 30,
+      "gutter": 20,
+      "order": "header-bookmark",
+      "size": 75,
+      "direction": "horizontal",
+      "scrollbar": "none",
+      "overscroll": { "active": false, "unblur": false },
+      "area": {
+        "header": { "width": 90, "justify": "center" },
+        "bookmark": { "width": 85, "justify": "center" }
+      },
+      "breakpoint": "md",
+      "favicon": "https://pub-d58dc2256ab048859c142c9e3929ad45.r2.dev/fox.png"
+    },
+    "header": {
+      "clock": {
+        "separator": { "show": true, "text": "" },
+        "meridiem": { "show": false },
+        "hour24": { "show": true },
+        "size": 210,
+        "newLine": false,
+        "hour": { "show": true, "display": "number" },
+        "minute": { "show": true, "display": "number" },
+        "second": { "show": true, "display": "number" }
+      },
+      "date": {
+        "day": {
+          "show": true,
+          "display": "word",
+          "weekStart": "monday",
+          "length": "long"
+        },
+        "date": { "show": true, "display": "number", "ordinal": false },
+        "month": {
+          "show": true,
+          "display": "word",
+          "length": "short",
+          "ordinal": true
+        },
+        "year": { "show": true, "display": "number" },
+        "separator": { "show": true, "text": "" },
+        "format": "date-month",
+        "size": 100,
+        "newLine": true
+      },
+      "search": {
+        "show": true,
+        "engine": {
+          "selected": "google",
+          "custom": { "url": "", "name": "", "queryName": "" }
+        },
+        "width": { "by": "custom", "size": 78 },
+        "text": { "justify": "left" },
+        "size": 190,
+        "newLine": true,
+        "newTab": false,
+        "string": ""
+      },
+      "greeting": {
+        "show": true,
+        "type": "custom",
+        "name": "Hieunm",
+        "size": 390,
+        "newLine": true,
+        "custom": "Wake Up"
+      },
+      "transitional": {
+        "show": true,
+        "type": "its",
+        "size": 180,
+        "newLine": false
+      },
+      "item": { "justify": "left" },
+      "order": ["greeting", "transitional", "clock", "date", "search"],
+      "edit": false
+    },
+    "bookmark": {
+      "edit": false,
+      "style": "block",
+      "show": true,
+      "add": false,
+      "orientation": "bottom",
+      "url": { "show": true },
+      "line": { "show": true },
+      "shadow": { "show": false },
+      "hoverScale": { "show": false },
+      "size": 148,
+      "item": {}
+    },
+    "group": {
+      "area": { "justify": "left" },
+      "name": { "size": 110.00000000000001 },
+      "order": "header-body",
+      "add": false,
+      "edit": false,
+      "toolbar": { "size": 100 }
+    },
+    "toolbar": {
+      "location": "corner",
+      "position": "top-left",
+      "size": 50,
+      "accent": { "show": true },
+      "add": { "show": true },
+      "edit": { "show": true },
+      "newLine": false
+    },
+    "theme": {
+      "accent": {
+        "random": { "active": false, "style": "light" },
+        "rgb": { "r": 255, "g": 255, "b": 255 },
+        "cycle": { "active": false, "speed": 1000, "step": 60 },
+        "hsl": { "h": 0, "s": 0, "l": 100 }
+      },
+      "style": "dark",
+      "radius": 50,
+      "color": {
+        "contrast": { "start": 13, "end": 100 },
+        "shades": 14,
+        "range": { "primary": { "h": 0, "s": 0 } }
+      },
+      "font": {
+        "display": { "name": "Baloo 2", "weight": 400, "style": "normal" },
+        "ui": { "name": "", "weight": 400, "style": "normal" }
+      },
+      "custom": {
+        "all": [
+          {
+            "name": "My custom theme",
+            "color": {
+              "range": { "primary": { "h": 0, "s": 0, "l": 21 } },
+              "contrast": { "start": 13, "end": 100 }
+            },
+            "accent": {
+              "hsl": { "h": 179, "s": 100, "l": 50 },
+              "rgb": { "r": 0, "g": 255, "b": 252 }
+            },
+            "font": {
+              "display": {
+                "name": "Baloo 2",
+                "weight": 400,
+                "style": "normal"
+              },
+              "ui": { "name": "", "weight": 400, "style": "normal" }
+            },
+            "background": {
+              "color": {
+                "rgb": { "r": 0, "g": 0, "b": 0 },
+                "hsl": { "h": 0, "s": 0, "l": 0 }
+              },
+              "gradient": {
+                "angle": 160,
+                "start": {
+                  "hsl": { "h": 206, "s": 16, "l": 40 },
+                  "rgb": { "r": 86, "g": 104, "b": 118 }
+                },
+                "end": {
+                  "hsl": { "h": 219, "s": 28, "l": 12 },
+                  "rgb": { "r": 22, "g": 28, "b": 39 }
+                }
+              },
+              "type": "image",
+              "image": {
+                "url": "https://images.unsplash.com/photo-1472803828399-39d4ac53c6e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3442&q=80",
+                "blur": 0,
+                "opacity": 50,
+                "scale": 100,
+                "grayscale": 0,
+                "accent": 0,
+                "vignette": { "opacity": 100, "start": 97, "end": 31 }
+              },
+              "video": {
+                "url": "",
+                "blur": 0,
+                "opacity": 50,
+                "scale": 100,
+                "grayscale": 0,
+                "accent": 0,
+                "vignette": { "opacity": 100, "start": 97, "end": 31 }
+              }
+            },
+            "radius": 50,
+            "shadow": 25,
+            "style": "dark",
+            "shade": { "opacity": 10, "blur": 0 },
+            "opacity": { "general": 100 },
+            "layout": {
+              "color": {
+                "by": "theme",
+                "opacity": 10,
+                "hsl": { "h": 0, "s": 0, "l": 0 },
+                "rgb": { "r": 0, "g": 0, "b": 0 },
+                "blur": 0
+              },
+              "divider": { "size": 0 }
+            },
+            "header": {
+              "color": {
+                "by": "theme",
+                "opacity": 95,
+                "hsl": { "h": 0, "s": 0, "l": 0 },
+                "rgb": { "r": 0, "g": 0, "b": 0 }
+              },
+              "search": { "opacity": 56.00000000000001 }
+            },
+            "bookmark": {
+              "color": {
+                "by": "theme",
+                "opacity": 10,
+                "hsl": { "h": 0, "s": 0, "l": 0 },
+                "rgb": { "r": 0, "g": 0, "b": 0 }
+              },
+              "item": { "border": 0, "opacity": 100 }
+            },
+            "group": { "toolbar": { "opacity": 100 } },
+            "toolbar": { "opacity": 100 }
+          }
+        ],
+        "edit": false
+      },
+      "shadow": 25,
+      "shade": { "opacity": 10, "blur": 0 },
+      "opacity": { "general": 100 },
+      "group": { "toolbar": { "opacity": 100 } },
+      "toolbar": { "opacity": 100 },
+      "layout": {
+        "color": {
+          "by": "theme",
+          "opacity": 10,
+          "hsl": { "h": 0, "s": 0, "l": 0 },
+          "rgb": { "r": 0, "g": 0, "b": 0 },
+          "blur": 0
+        },
+        "divider": { "size": 0 }
+      },
+      "header": {
+        "color": {
+          "by": "theme",
+          "opacity": 95,
+          "hsl": { "h": 0, "s": 0, "l": 0 },
+          "rgb": { "r": 0, "g": 0, "b": 0 }
+        },
+        "search": { "opacity": 56.00000000000001 }
+      },
+      "bookmark": {
+        "color": {
+          "by": "theme",
+          "opacity": 10,
+          "hsl": { "h": 0, "s": 0, "l": 0 },
+          "rgb": { "r": 0, "g": 0, "b": 0 }
+        },
+        "item": { "border": 0, "opacity": 100 }
+      },
+      "background": {
+        "color": {
+          "rgb": { "r": 0, "g": 0, "b": 0 },
+          "hsl": { "h": 0, "s": 0, "l": 0 }
+        },
+        "gradient": {
+          "angle": 160,
+          "start": {
+            "hsl": { "h": 206, "s": 16, "l": 40 },
+            "rgb": { "r": 86, "g": 104, "b": 118 }
+          },
+          "end": {
+            "hsl": { "h": 219, "s": 28, "l": 12 },
+            "rgb": { "r": 22, "g": 28, "b": 39 }
+          }
+        },
+        "type": "image",
+        "image": {
+          "url": "https://pub-d58dc2256ab048859c142c9e3929ad45.r2.dev/1354199.jpeg",
+          "blur": 0,
+          "opacity": 65,
+          "scale": 100,
+          "grayscale": 0,
+          "accent": 0,
+          "vignette": { "opacity": 100, "start": 97, "end": 31 }
+        },
+        "video": {
+          "url": "",
+          "blur": 0,
+          "opacity": 50,
+          "scale": 100,
+          "grayscale": 0,
+          "accent": 0,
+          "vignette": { "opacity": 100, "start": 97, "end": 31 }
+        }
+      }
+    },
+    "search": false,
+    "modal": false,
+    "menu": true
+  },
+  "bookmark": [
+    {
+      "name": { "show": false, "text": "Hieunm's Bookmark!!!" },
+      "items": [
+        {
+          "display": {
+            "direction": "vertical",
+            "order": "visual-name",
+            "alignment": "center-center",
+            "gutter": 20,
+            "rotate": 0,
+            "translate": { "x": 0, "y": 0 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "letter": { "text": "R" },
+              "image": { "url": "" },
+              "icon": {
+                "name": "youtube",
+                "prefix": "fab",
+                "label": "Youtube"
+              },
+              "shadow": { "size": 0 },
+              "size": 30
+            },
+            "name": { "show": false, "text": "Youtube", "size": 7 }
+          },
+          "url": "https://www.youtube.com/",
+          "accent": {
+            "by": "custom",
+            "hsl": { "h": 0, "s": 99, "l": 49 },
+            "rgb": { "r": 249, "g": 1, "b": 1 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 100, "l": 50 },
+            "rgb": { "r": 255, "g": 0, "b": 0 },
+            "opacity": 46
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "https://i.ibb.co/3YKDFGr/ishtar.jpg" },
+            "video": { "url": "" }
+          },
+          "timestamp": 1546453111491,
+          "border": 0,
+          "shape": { "wide": true, "tall": false }
+        },
+        {
+          "display": {
+            "direction": "vertical",
+            "order": "visual-name",
+            "alignment": "center-center",
+            "gutter": 20,
+            "rotate": 0,
+            "translate": { "x": 0, "y": 0 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "letter": { "text": "DR" },
+              "image": { "url": "" },
+              "icon": { "name": "claude", "prefix": "fab", "label": "Claude" },
+              "shadow": { "size": 0 },
+              "size": 30
+            },
+            "name": { "show": false, "text": "Claude", "size": 7 }
+          },
+          "url": "https://claude.ai/",
+          "accent": {
+            "by": "custom",
+            "hsl": { "h": 25, "s": 75, "l": 55 },
+            "rgb": { "r": 217, "g": 143, "b": 64 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 46
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "timestamp": 1546453111953,
+          "border": 0,
+          "shape": { "wide": false, "tall": false }
+        },
+        {
+          "display": {
+            "direction": "vertical",
+            "order": "visual-name",
+            "alignment": "center-center",
+            "gutter": 20,
+            "rotate": 0,
+            "translate": { "x": 0, "y": 0 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "letter": { "text": "GM" },
+              "image": { "url": "" },
+              "icon": {
+                "name": "github-alt",
+                "prefix": "fab",
+                "label": "Github Alt"
+              },
+              "shadow": { "size": 0 },
+              "size": 30
+            },
+            "name": { "show": false, "text": "Github", "size": 7 }
+          },
+          "url": "https://github.com/",
+          "accent": {
+            "by": "custom",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 46
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "timestamp": 1546453110265,
+          "border": 0,
+          "shape": { "wide": false, "tall": false }
+        },
+        {
+          "display": {
+            "direction": "vertical",
+            "order": "visual-name",
+            "alignment": "center-center",
+            "gutter": 20,
+            "rotate": 0,
+            "translate": { "x": 0, "y": 0 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "letter": { "text": "AZ" },
+              "image": { "url": "" },
+              "icon": { "name": "gitlab", "prefix": "fab", "label": "Gitlab" },
+              "shadow": { "size": 0 },
+              "size": 30
+            },
+            "name": { "show": false, "text": "GitLab", "size": 7 }
+          },
+          "url": "https://gitlab.com/",
+          "accent": {
+            "by": "custom",
+            "hsl": { "h": 18, "s": 97, "l": 57 },
+            "rgb": { "r": 252, "g": 109, "b": 38 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 46
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "timestamp": 1546453107633,
+          "border": 0,
+          "shape": { "wide": false, "tall": false }
+        },
+        {
+          "display": {
+            "direction": "vertical",
+            "order": "visual-name",
+            "alignment": "center-center",
+            "gutter": 10,
+            "rotate": 0,
+            "translate": { "x": 0, "y": 0 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "letter": { "text": "" },
+              "image": { "url": "" },
+              "icon": { "name": "openai", "prefix": "fab", "label": "Openai" },
+              "shadow": { "size": 0 },
+              "size": 30
+            },
+            "name": { "show": false, "text": "ChatGPT", "size": 6 }
+          },
+          "url": "https://chatgpt.com/",
+          "accent": {
+            "by": "custom",
+            "hsl": { "h": 165, "s": 70, "l": 46 },
+            "rgb": { "r": 35, "g": 199, "b": 160 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 46
+          },
+          "background": {
+            "show": false,
+            "type": "video",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "timestamp": 1620855641371,
+          "border": 0,
+          "shape": { "wide": false, "tall": false }
+        }
+      ],
+      "toolbar": { "openAll": { "show": true }, "collapse": { "show": true } },
+      "collapse": false
+    }
+  ]
+}
