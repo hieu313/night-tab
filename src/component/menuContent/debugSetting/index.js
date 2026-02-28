@@ -21,6 +21,7 @@ import { Control_checkbox } from '../../control/checkbox';
 import { node } from '../../../utility/node';
 import { randomNumber } from '../../../utility/randomNumber';
 import { randomString } from '../../../utility/randomString';
+import { getFontAwesomePrefixFromStyles } from '../../../utility/normalizeFontAwesomeIcon';
 
 const debugSetting = {};
 
@@ -204,12 +205,7 @@ debugSetting.bookmark = (parent) => {
 
           newBookmarkData.link.display.visual.icon.label = randomIcon.label;
           newBookmarkData.link.display.visual.icon.name = randomIcon.name;
-
-          if (randomIcon.styles.includes('solid')) {
-            newBookmarkData.link.display.visual.icon.prefix = 'fas';
-          } else if (randomIcon.styles.includes('brands')) {
-            newBookmarkData.link.display.visual.icon.prefix = 'fab';
-          }
+          newBookmarkData.link.display.visual.icon.prefix = getFontAwesomePrefixFromStyles(randomIcon.styles);
 
           newBookmarkData.link.display.name.text = randomString({ adjectivesCount: 1 });
 

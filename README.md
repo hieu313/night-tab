@@ -7,7 +7,7 @@ This repository already contains a legacy project page at `readme.md`; this `REA
 ## Project Snapshot
 
 - App name: `nightTab`
-- Current app version: `7.6.0` (`Nebulous Lobster`)
+- Current app version: `7.7.0` (`Nebulous Lobster`)
 - Runtime target: Browser extension new-tab override
 - Manifest: `manifest_version: 3`
 - Primary data store: `window.localStorage`
@@ -100,4 +100,3 @@ webpack.*.js          # build pipeline (dev/prod/common)
 
 - No automated unit/integration test suite in repo
 - Localization packs exist, but runtime language pack import is currently narrowed to `en_GB`
-

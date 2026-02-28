@@ -1,6 +1,7 @@
 import { state } from '../state';
 import { version } from '../version';
 import { updateLegacy } from '../updateLegacy';
+import { normalizeFontAwesomeIcon } from '../../utility/normalizeFontAwesomeIcon';
 
 const update = {};
 
@@ -622,6 +623,34 @@ update.mod['7.4.0'] = function(data) {
 update.mod['7.5.0'] = function(data) {
 
   data.state.language = 'system';
+
+  return data;
+
+};
+
+update.mod['7.7.0'] = function(data) {
+
+  if (!Array.isArray(data.bookmark)) {
+    return data;
+  }
+
+  data.bookmark.forEach((group) => {
+    if (!Array.isArray(group.items)) {
+      return;
+    }
+
+    group.items.forEach((bookmarkItem) => {
+      if (!bookmarkItem.display || !bookmarkItem.display.visual || !bookmarkItem.display.visual.icon) {
+        return;
+      }
+
+      const normalizedIcon = normalizeFontAwesomeIcon(bookmarkItem.display.visual.icon);
+
+      bookmarkItem.display.visual.icon.label = normalizedIcon.label;
+      bookmarkItem.display.visual.icon.name = normalizedIcon.name;
+      bookmarkItem.display.visual.icon.prefix = normalizedIcon.prefix;
+    });
+  });
 
   return data;
 

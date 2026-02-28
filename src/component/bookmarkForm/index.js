@@ -29,6 +29,7 @@ import { isValidString } from '../../utility/isValidString';
 import { ordinalNumber } from '../../utility/ordinalNumber';
 import { randomString } from '../../utility/randomString';
 import { randomNumber } from '../../utility/randomNumber';
+import { getFontAwesomePrefixFromStyles, normalizeFontAwesomeIcon } from '../../utility/normalizeFontAwesomeIcon';
 
 import './index.css';
 
@@ -1252,8 +1253,14 @@ export const BookmarkForm = function({
 
     this.control.bookmark.display.visual.icon.text.update();
 
-    if (isValidString(bookmarkData.link.display.visual.icon.prefix) && isValidString(bookmarkData.link.display.visual.icon.name)) {
-      this.control.bookmark.display.visual.icon.preview.update(node('span|class:bookmark-form-icon ' + bookmarkData.link.display.visual.icon.prefix + ' fa-' + bookmarkData.link.display.visual.icon.name));
+    const normalizedIcon = normalizeFontAwesomeIcon(bookmarkData.link.display.visual.icon);
+
+    bookmarkData.link.display.visual.icon.label = normalizedIcon.label;
+    bookmarkData.link.display.visual.icon.name = normalizedIcon.name;
+    bookmarkData.link.display.visual.icon.prefix = normalizedIcon.prefix;
+
+    if (isValidString(normalizedIcon.prefix) && isValidString(normalizedIcon.name)) {
+      this.control.bookmark.display.visual.icon.preview.update(node('span|class:bookmark-form-icon ' + normalizedIcon.prefix + ' fa-' + normalizedIcon.name));
     } else {
       this.control.bookmark.display.visual.icon.preview.update();
     }
@@ -1300,14 +1307,15 @@ export const BookmarkForm = function({
     postFocus: this.control.bookmark.display.visual.icon.preview.groupText,
     action: (suggestData) => {
 
-      bookmarkData.link.display.visual.icon.label = suggestData.label;
-      bookmarkData.link.display.visual.icon.name = suggestData.name;
+      const normalizedIcon = normalizeFontAwesomeIcon({
+        label: suggestData.label,
+        name: suggestData.name,
+        prefix: getFontAwesomePrefixFromStyles(suggestData.styles)
+      });
 
-      if (suggestData.styles.includes('solid')) {
-        bookmarkData.link.display.visual.icon.prefix = 'fas';
-      } else if (suggestData.styles.includes('brands')) {
-        bookmarkData.link.display.visual.icon.prefix = 'fab';
-      }
+      bookmarkData.link.display.visual.icon.label = normalizedIcon.label;
+      bookmarkData.link.display.visual.icon.name = normalizedIcon.name;
+      bookmarkData.link.display.visual.icon.prefix = normalizedIcon.prefix;
 
       this.preview.update.assemble(bookmarkData);
       this.update();

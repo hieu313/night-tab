@@ -17,6 +17,7 @@ import { node } from '../../utility/node';
 import { complexNode } from '../../utility/complexNode';
 import { isValidString } from '../../utility/isValidString';
 import { trimString } from '../../utility/trimString';
+import { normalizeFontAwesomeIcon } from '../../utility/normalizeFontAwesomeIcon';
 
 const BookmarkTile = function({
   bookmarkData = {},
@@ -24,6 +25,14 @@ const BookmarkTile = function({
 } = {}) {
 
   this.data = bookmarkData;
+
+  if (bookmarkData.link && bookmarkData.link.display && bookmarkData.link.display.visual && bookmarkData.link.display.visual.icon) {
+    const normalizedIcon = normalizeFontAwesomeIcon(bookmarkData.link.display.visual.icon);
+
+    bookmarkData.link.display.visual.icon.label = normalizedIcon.label;
+    bookmarkData.link.display.visual.icon.name = normalizedIcon.name;
+    bookmarkData.link.display.visual.icon.prefix = normalizedIcon.prefix;
+  }
 
   this.element = {
     bookmark: node('div|class:bookmark'),

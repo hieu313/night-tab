@@ -1,12 +1,13 @@
 {
   "name": "nightTab",
-  "version": "7.6.0",
+  "version": "7.7.0",
   "description": "A neutral new tab page accented with a chosen colour. Customise the layout, style, background and bookmarks with nightTab.",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:fontawesome": "node scripts/sync-fontawesome.mjs"
   },
   "keywords": [
     "startpage",

@@ -6,6 +6,7 @@ import { isValidString } from '../../utility/isValidString';
 import { trimString } from '../../utility/trimString';
 import { node } from '../../utility/node';
 import { clearChildNode } from '../../utility/clearChildNode';
+import { getFontAwesomePrefixFromStyles } from '../../utility/normalizeFontAwesomeIcon';
 
 import './index.css';
 
@@ -205,12 +206,7 @@ export const Suggest = function ({
           });
 
           let icon = node('span|class:suggest-icon fa-' + item.name);
-
-          if (item.styles.includes('solid')) {
-            icon.classList.add('fas');
-          } else if (item.styles.includes('brands')) {
-            icon.classList.add('fab');
-          }
+          icon.classList.add(getFontAwesomePrefixFromStyles(item.styles));
 
           let text = node('span:' + item.label + '|class:suggest-icon-text');
 
