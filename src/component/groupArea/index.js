@@ -370,6 +370,7 @@ export const GroupArea = function({
   this.update.style = () => {
 
     const html = document.querySelector('html');
+    const forceOpenBySearch = state.get.current().search;
 
     if (state.get.current().theme.group.toolbar.opacity < 40) {
 
@@ -389,7 +390,13 @@ export const GroupArea = function({
 
     }
 
-    if (groupData.group.collapse) {
+    if (forceOpenBySearch) {
+      this.collapse.button.disable();
+    } else {
+      this.collapse.button.enable();
+    }
+
+    if (groupData.group.collapse && !forceOpenBySearch) {
 
       this.element.group.classList.add('is-group-collapse');
 
