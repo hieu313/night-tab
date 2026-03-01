@@ -93,7 +93,7 @@ export const Date = function () {
         if (state.get.current().header.date.date.ordinal) {
           value = this.now.format('Do');
         } else {
-          value = this.now.format('D');
+          value = this.now.format('DD');
         }
 
         break;
