@@ -1,0 +1,203 @@
+.library {
+  background-color: hsla(var(--theme-primary-010), 0.96);
+  border-radius: calc(var(--theme-radius) * 0.01em);
+  box-shadow: var(--theme-shadow-bottom-large);
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+  width: min(32em, calc(100vw - 2em));
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(calc(100% + 1em));
+  transition: opacity var(--layout-transition-extra-fast), transform var(--layout-transition-fast), background-color var(--layout-transition-extra-fast);
+  z-index: 7500;
+}
+
+.library.is-open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.library-header {
+  padding: 1.25em 1.25em 1em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.library-title {
+  margin-bottom: 0.2em;
+}
+
+.library-description {
+  margin-bottom: 0;
+  max-width: 28em;
+}
+
+.library-close-button {
+  margin: 0;
+}
+
+.library-content {
+  padding: 0 1.25em 1.25em;
+  display: grid;
+  align-content: start;
+  gap: 1em;
+  overflow-y: auto;
+}
+
+.library-group {
+  background:
+    linear-gradient(135deg, hsla(var(--theme-primary-020), 0.65), hsla(var(--theme-primary-010), 0.4)),
+    hsla(var(--theme-primary-020), 0.45);
+  border: 1px solid hsla(var(--theme-primary-040), 0.22);
+  border-radius: calc(var(--theme-radius) * 0.01em);
+  padding: 1em;
+  display: grid;
+  gap: 0.85em;
+}
+
+.library-group-header {
+  display: grid;
+  gap: 0.7em;
+}
+
+.library-group-title {
+  margin-bottom: 0;
+}
+
+.library-group-meta {
+  min-width: 0;
+  display: grid;
+  gap: 0.45em;
+}
+
+.library-group-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  min-width: 0;
+}
+
+.library-group-count {
+  background-color: hsla(var(--theme-primary-040), 0.35);
+  border: 1px solid hsla(var(--theme-primary-050), 0.18);
+  border-radius: 999px;
+  color: hsl(var(--theme-primary-text-020));
+  flex: 0 0 auto;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1;
+  min-width: 2.1em;
+  padding: 0.45em 0.55em;
+  text-align: center;
+}
+
+.library-group-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.library-group-button {
+  background-color: hsla(var(--theme-primary-030), 0.28);
+  border-radius: calc(var(--theme-radius) * 0.008em);
+  box-shadow: inset 0 0 0 1px hsla(var(--theme-primary-040), 0.12);
+  margin: 0;
+  min-width: 2.75em;
+  min-height: 2.75em;
+  padding: 0;
+  position: relative;
+  width: 2.75em;
+}
+
+.library-group-button .icon {
+  font-size: 1.05em;
+}
+
+.library-group-button-primary {
+  background-color: hsla(var(--theme-primary-040), 0.48);
+  box-shadow: inset 0 0 0 1px hsla(var(--theme-primary-050), 0.18);
+}
+
+.library-group-button-primary:hover,
+.library-group-button-primary:focus {
+  background-color: hsla(var(--theme-primary-050), 0.62);
+}
+
+.library-group-button-danger {
+  background-color: hsla(var(--theme-primary-020), 0.18);
+}
+
+.library-group-button-danger:hover,
+.library-group-button-danger:focus {
+  background-color: hsla(var(--theme-primary-030), 0.42);
+}
+
+.library-bookmark-list {
+  display: grid;
+  gap: 0.5em;
+}
+
+.library-bookmark-link {
+  background-color: hsla(var(--theme-primary-030), 0.4);
+  border-radius: calc(var(--theme-radius) * 0.0075em);
+  color: inherit;
+  padding: 0.75em 0.9em;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color var(--layout-transition-extra-fast), color var(--layout-transition-extra-fast);
+}
+
+.library-bookmark-link:focus,
+.library-bookmark-link:hover {
+  background-color: hsla(var(--theme-primary-040), 0.55);
+}
+
+.library-empty {
+  background-color: hsla(var(--theme-primary-020), 0.35);
+  border-radius: calc(var(--theme-radius) * 0.01em);
+  padding: 1.5em;
+  text-align: center;
+}
+
+.library-empty-heading {
+  margin-bottom: 0.35em;
+}
+
+.library-empty-description,
+.library-group-empty {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+
+  .library {
+    top: 0.75em;
+    right: 0.75em;
+    bottom: 0.75em;
+    width: calc(100vw - 1.5em);
+  }
+
+  .library-header,
+  .library-content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .library-group-header {
+    gap: 0.75em;
+  }
+
+  .library-group-toolbar {
+    gap: 0.45em;
+  }
+
+}
