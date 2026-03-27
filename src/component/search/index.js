@@ -12,6 +12,8 @@ import { node } from '../../utility/node';
 import { trimString } from '../../utility/trimString';
 import { isValidString } from '../../utility/isValidString';
 
+import { isAiPrefix, stripAiPrefix, buildPerplexityUrl } from '../../utility/search-prefix-router';
+
 import './index.css';
 
 export const Search = function () {
@@ -49,9 +51,21 @@ export const Search = function () {
     })
   };
 
+  // IME composition guard
+  this.composing = false;
+  this.element.input.text.addEventListener('compositionstart', () => { this.composing = true; });
+  this.element.input.text.addEventListener('compositionend', () => { this.composing = false; this.state(); this.performSearch(); });
+
   this.state = () => {
 
-    if (isValidString(trimString(this.element.input.text.value))) {
+    const raw = this.element.input.text.value || '';
+
+    // If input starts with '/', suppress bookmark filtering (covers '/ai' and any slash command)
+    if (raw.startsWith('/')) {
+
+      state.get.current().search = false;
+
+    } else if (isValidString(trimString(raw))) {
 
       state.get.current().search = true;
 
@@ -94,6 +108,9 @@ export const Search = function () {
         break;
 
     }
+
+    // Add hint for Perplexity routing
+    placeholder = placeholder + ' — Type /ai to ask Perplexity';
 
     this.element.input.text.placeholder = placeholder;
 
@@ -140,7 +157,7 @@ export const Search = function () {
   };
 
   this.engine.bind = () => {
-    this.element.input.addEventListener();
+    // no-op
   };
 
   this.performSearch = () => {
@@ -202,6 +219,20 @@ export const Search = function () {
   this.assemble = () => {
 
     this.element.input.text.type = 'Search';
+
+    // Intercept submit to support /ai prefix routing
+    this.element.form.addEventListener('submit', (e) => {
+      const raw = this.element.input.text.value || '';
+      if (isAiPrefix(raw)) {
+        e.preventDefault();
+        if (this.composing) { return; }
+        const q = stripAiPrefix(raw);
+        const url = buildPerplexityUrl(q);
+        // Force current tab regardless of header.search.newTab
+        window.location.assign(url);
+      }
+      // else let native submit proceed
+    });
 
     this.element.form.appendChild(this.element.input.text);
 
